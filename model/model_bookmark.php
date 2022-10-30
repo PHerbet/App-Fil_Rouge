@@ -5,7 +5,7 @@
                         ATTRIBUTS
         ---------------------------------------------*/
         private $id_bookmark;
-        private $nom_bookmark;
+        private $name_bookmark;
         private $url_bookmark;
         private $description_bookmark;
         private $img_bookmark;
@@ -13,31 +13,31 @@
         /*---------------------------------------------
                         CONSTRUCTOR
         ---------------------------------------------*/
-        public function __construct($nom_bookmark, $url_bookmark)
+        public function __construct($name_bookmark, $url_bookmark)
         {
-            $this->nom_bookmark = $nom_bookmark;
+            $this->name_bookmark = $name_bookmark;
             $this->url_bookmark = $url_bookmark;
         }
         /*---------------------------------------------
                     GETTER AND SETTER
         ---------------------------------------------*/
-        public function getIdbookmark():int
+        public function getIdBookmark():int
         {
             return $this->id_bookmark;
         }
-        public function getNombookmark():string
+        public function getNameBookmark():string
         {
-            return $this->nom_bookmark;
+            return $this->name_bookmark;
         }
-        public function getUrlbookmark():string
+        public function getUrlBookmark():string
         {
             return $this->url_bookmark;
         }
-        public function getDescriptionbookmark():string
+        public function getDescriptionBookmark():string
         {
             return $this->description_bookmark;
         }
-        public function getImgbookmark():string
+        public function getImgBookmark():string
         {
             return $this->img_bookmark;
         }
@@ -50,9 +50,9 @@
         {
             $this->id_bookmark = $id;
         }
-        public function setNombookmark($nom_bookmark):void
+        public function setNamebookmark($name_bookmark):void
         {
-            $this->nom_bookmark = $nom_bookmark;
+            $this->name_bookmark = $name_bookmark;
         }
         public function setUrlbookmark($url_bookmark):void
         {
