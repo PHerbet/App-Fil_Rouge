@@ -1,0 +1,32 @@
+body {
+    display:flex;
+    width: 25%;
+    margin: 15%;
+}
+
+.form {/* option for the entire form */
+    background-color: aliceblue;
+    align-self: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: space-around;
+    max-width: 25%;
+    text-align: center;
+    height:33%;
+    padding:2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.button {
+    align-self: center;
+    width: 50%;
+}
+

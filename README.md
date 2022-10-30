@@ -1,1 +1,3 @@
 # App-Fil_Rouge
+
+Ce dossier git contient le code de mon application de gestionnaire de favoris créer lors de ma formation de développeur web. Afin de me faciliter le gestion du code, j'ai décider de scinder le code de la conception de l'application. Le dossier Realisation_Fil_Rouge contient tous les fichier de conception comme le MCD/MLD, les diagrammes de classes, d'utilisations... 
