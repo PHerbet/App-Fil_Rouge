@@ -1,4 +1,12 @@
 <?php
+    /*-------------------------------------------
+                    IMPORTS
+    -------------------------------------------*/
+    //Connexion BDD
+    include './util/connect_bdd.php';
+    /*-------------------------------------------
+                        TEST
+    -------------------------------------------*/
     //Analyse de l'URL avec parse_url() et retourne ses composants
     $url = parse_url($_SERVER['REQUEST_URI']);
 
