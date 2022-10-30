@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/projet/asset/css/style_connexion.css">
+    <link rel="stylesheet" href="/projet/asset/css/style_connection.css">
     <title>Inscription</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
             <label for="img">Image :</label>
                 <input type="file" name="img" id="img">
             <input class="button" type="submit" name="inscription" value="Inscription">
-            <a href="/projet/accueil">Connection</a>
+            <a href="/projet/">Connection</a>
         </form>
     </div>
 </body>

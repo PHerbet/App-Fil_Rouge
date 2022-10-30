@@ -49,7 +49,7 @@ a {
     align-self: center;
     }
 
-.folder{
+.folder_name{
     margin: 5px;
 }
 
@@ -61,22 +61,22 @@ a {
     width: 100%;
     height:100%;
 }
-.all_favoris {
+.all_bookmark {
     display: flex;
     justify-content: space-evenly;
 }
 
-.all_dos {
+.all_folder {
     margin-top: 30px;
 }
 
-.dos {
+.folder {
     display: flex;
     margin: 10px;
 } 
 
 
-.favoris_menu {
+.bookmark_menu {
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -135,7 +135,7 @@ a {
 .add_dos{
     display: none;
 }
-.favoris{
+.bookmark{
     display: flex;
     justify-content: center;
 }

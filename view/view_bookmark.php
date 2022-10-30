@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./asset/css/style_favoris.css">
+    <link rel="stylesheet" href="./asset/css/style_bookmark.css">
     <title>Favoris</title>
 </head>
 <body>
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 			<!-- div afficher tout les favoris et bouton création de dossier -->
-			<div class="all_favoris">
+			<div class="all_bookmark">
 				<!-- div du lien pour afficher tous les favoris -->
 				<div class="title">
 					<a href="">Favoris</a>
@@ -55,38 +55,38 @@
 				</div>
 			</div>
 			<!-- div contenant tout les dossiers de favoris généré par la fonction  -->
-			<div class="all_dos">
+			<div class="all_folders">
 				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="dos">
+				<div class="folder">
 					<div class="folder_icon">
 						<img class="icon" src="./asset/img/logo.png">
 					</div>
-					<div class="folder">
+					<div class="folder_name">
 						Cybersécurité
 					</div>
 				</div>
 				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="dos">
+				<div class="folder">
 					<div class="folder_icon">
 						<img class="icon" src="./asset/img/logo.png">
 					</div>
-					<div class="folder">
+					<div class="folder_name">
 						CSS/HTML
 					</div>
 				</div>
 				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="dos">
+				<div class="folder">
 					<div class="folder_icon">
 						<img class="icon" src="./asset/img/logo.png">
 					</div>
-					<div class="folder">
+					<div class="folder_name">
 						Licornes 
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- div du menu des favoris -->
-		<div class="favoris_menu">
+		<div class="bookmark_menu">
 			<!-- div de recherche -->
 			<div class="search">
 				<form class="rechercher" method="GET" action="rechercher.php">
@@ -95,7 +95,7 @@
 				</form>			
 			</div>
 			<!-- div menu ajouter des favoris -->
-			<div class="favoris">
+			<div class="bookmark">
 				<!-- div ajouter l'url en favoris -->
 				<div>
 					<input type="button" name="" value="Ajouter Favoris">
@@ -104,7 +104,7 @@
 				<div class="menu_icon">
 					<input type="image" class="icon" src="./asset/img/dropdown.webp">
 				</div>
-				<div class="add_favoris">
+				<div class="add_bookmark">
 					<input type="file" hidden>
 				</div>
 			</div>

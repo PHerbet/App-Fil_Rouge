@@ -18,25 +18,25 @@ if (isset($_POST['inscription']))
     && $_POST['login'] !="" && $_POST['mail'] !="" && $_POST['mdp'] !="")
     {
         //instanciation of a new Object
-        $utilisateur = new Utilisateur(null, null, null, null);
-        $utilisateur -> setLoginUtilisateur($_POST['login']);
-        $utilisateur -> setMailUtilisateur($_POST['mail']);
-        $utilisateur -> setImgUtilisateur($_POST['img']);
+        $user = new User(null, null, null, null);
+        $user -> setLoginUser($_POST['login']);
+        $user -> setMailUser($_POST['mail']);
+        $user -> setImgUser($_POST['img']);
         {//Hash password
             $option= 10;
-            echo $utilisateur->setMdpUtilisateur(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
+            echo $user->setPassUser(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
 
         //Checking if mail are already in the db
-            $mail = $utilisateur->show_user_by_mail($bdd);
+            $mail = $user->show_user_by_mail($bdd);
             if ($mail)
-            {//Using method add_utilisateur to create an account
+            {//Using method add_user to create an account
                 // var_dump($mail);
                 echo' les informations sont incorrecte';
             }
             else
             {//Error message for existing mail in database
                 // var_dump($mail);
-                $utilisateur->add_utilisateur($bdd);
+                $user->add_user($bdd);
                 echo '<p> Inscription réussie!<p>';
             }
         }

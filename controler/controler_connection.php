@@ -4,7 +4,7 @@
                 IMPORT
 ----------------------------------------*/
 //Import view connexion
-    include './view/view_connexion.php';
+    include './view/view_connection.php';
 //Connexion BDD
     include './util/connect_bdd.php';
 //Import model
@@ -20,17 +20,17 @@
             {
                 
                 //instanciation of a new Object
-                $utilisateur = new Utilisateur("", "", "", "");
-                $utilisateur -> setMailUtilisateur($_POST['mail']);
-                // $utilisateur -> setImgUtilisateur($_POST['img']);
+                $user = new User("", "", "", "");
+                $user -> setMailUser($_POST['mail']);
+                // $user -> setImgUser($_POST['img']);
                 //Stockage the information in an array
                 
-                $test = $utilisateur->show_user_by_mail($bdd);
+                $test = $user->show_user_by_mail($bdd);
                 
-                var_dump($utilisateur);//If the user exist in database, we check the password
+                var_dump($user);//If the user exist in database, we check the password
                 if(!empty($test))
                 {//Getting the hash
-                    $hash = $test[0]['mdp_utilisateur'];
+                    $hash = $test[0]['pass_user'];
                     var_dump($hash);
                     //We check the correspondance between the password in the datatbase an in the form
                     $password = password_verify($_POST['mdp'], $hash);
@@ -40,7 +40,7 @@
                         $_SESSION['connected'] = true;
                         $_SESSION['login'] = $test[0]['login'];
                         $_SESSION['mail'] = $test[0]['mail'];
-                        $_SESSION['mdp'] = $test[0]['mdp'];
+                        $_SESSION['pass'] = $test[0]['pass'];
                         $_SESSION['img'] = $test[0]['img'];
                         $_SESSION['statut'] = $test[0]['statut'];
                         //Connection message

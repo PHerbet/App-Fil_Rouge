@@ -1,95 +1,95 @@
 <?php
-    class Utilisateur
+    class User
     {
         /*---------------------------------------------
                         ATTRIBUTS
         ---------------------------------------------*/
-        private $id_utilisateur;
-        private $login_utilisateur;
-        private $mdp_utilisateur;
-        private $mail_utilisateur;
-        private $img_utilisateur;
-        private $statut_utilisateur;
+        private $id_user;
+        private $login_user;
+        private $pass_user;
+        private $mail_user;
+        private $img_user;
+        private $statut_user;
         /*---------------------------------------------
                         CONSTRUCTOR
         ---------------------------------------------*/
-        public function __construct($login_utilisateur, $mdp_utilisateur, $mail_utilisateur)
+        public function __construct($login_user, $pass_user, $mail_user)
         {
-            $this->login_utilisateur = $login_utilisateur;
-            $this->mdp_utilisateur = $mdp_utilisateur;
-            $this->mail_utilisateur = $mail_utilisateur;
+            $this->login_user = $login_user;
+            $this->pass_user = $pass_user;
+            $this->mail_user = $mail_user;
         }
         /*---------------------------------------------
                     GETTER AND SETTER
         ---------------------------------------------*/
-        public function getIdUtilisateur():int
+        public function getIdUser():int
         {
-            return $this->id_utilisateur;
+            return $this->id_user;
         }
-        public function getLoginUtilisateur():string
+        public function getLoginUser():string
         {
-            return $this->login_utilisateur;
+            return $this->login_user;
         }
-        public function getMdpUtilisateur():string
+        public function getpassUser():string
         {
-            return $this->mdp_utilisateur;
+            return $this->pass_user;
         }
-        public function getMailUtilisateur():string
+        public function getMailUser():string
         {
-            return $this->mail_utilisateur;
+            return $this->mail_user;
         }
-        public function getImgUtilisateur():string
+        public function getImgUser():string
         {
-            return $this->img_utilisateur;
+            return $this->img_user;
         }
-        public function getStatutUtilisateur():bool 
+        public function getStatutUser():bool 
         {
-            return $this->statut_utilisateur;
+            return $this->statut_user;
         }
 
-        public function setIdUtilisateur($id):void
+        public function setIdUser($id):void
         {
-            $this->id_utilisateur = $id;
+            $this->id_user = $id;
         }
-        public function setLoginUtilisateur($login):void
+        public function setLoginUser($login):void
         {
-            $this->login_utilisateur = $login;
+            $this->login_user = $login;
         }
-        public function setMdpUtilisateur($mdp):void
+        public function setpassUser($pass):void
         {
-            $this->mdp_utilisateur = $mdp;
+            $this->pass_user = $pass;
         }
-        public function setMailUtilisateur($mail):void
+        public function setMailUser($mail):void
         {
-            $this->mail_utilisateur = $mail;
+            $this->mail_user = $mail;
         }
-        public function setImgUtilisateur($img):void
+        public function setImgUser($img):void
         {
-            $this->img_utilisateur = $img;
+            $this->img_user = $img;
         }
-        public function setStatutUtilisateur($statut):void 
+        public function setStatutUser($statut):void 
         {
-            $this->statut_utilisateur = $statut;
+            $this->statut_user = $statut;
         }
         /*---------------------------------------------
                         METHODS
         ---------------------------------------------*/
         //Account creation:
-        public function add_utilisateur($bdd):void
+        public function add_user($bdd):void
         {//object instance:
-            $login = $this->getLoginUtilisateur();
-            $mdp = $this->getMdpUtilisateur();
-            $mail = $this->getMailUtilisateur();
-            $img = $this->getImgUtilisateur();
+            $login = $this->getLoginUser();
+            $pass = $this->getpassUser();
+            $mail = $this->getMailUser();
+            $img = $this->getImgUser();
             try
             {//SQL request 
-                $req = $bdd->prepare('INSERT INTO utilisateur(login_utilisateur, mdp_utilisateur, mail_utilisateur, img_utilisateur) 
-                VALUES (:login_utilisateur, :mdp_utilisateur, :mail_utilisateur, :img_utilisateur)');
+                $req = $bdd->prepare('INSERT INTO user(login_user, pass_user, mail_user, img_user) 
+                VALUES (:login_user, :pass_user, :mail_user, :img_user)');
                 $req -> execute(array(
-                    'login_utilisateur' => $login,
-                    'mdp_utilisateur' => $mdp,
-                    'mail_utilisateur' => $mail,
-                    'img_utilisateur' => $img
+                    'login_user' => $login,
+                    'pass_user' => $pass,
+                    'mail_user' => $mail,
+                    'img_user' => $img
                 ));
             }//Catching and return exception:
             catch(Exception $e)
@@ -102,9 +102,9 @@
         {
             try
             {//SQL request
-                $req = $bdd->prepare('SELECT * FROM utilisateur WHERE mail_utilisateur = :mail_utilisateur');
+                $req = $bdd->prepare('SELECT * FROM user WHERE mail_user = :mail_user');
                 $req -> execute(array(
-                    'mail_utilisateur' => $this->getMailUtilisateur(), 
+                    'mail_user' => $this->getMailUser(), 
                 ));
                 $data = $req -> fetchAll(PDO::FETCH_ASSOC);
                 return $data;

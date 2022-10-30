@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/projet/asset/css/style_connexion.css">
+    <link rel="stylesheet" href="/projet/asset/css/style_connection.css">
     <title>Accueil</title>
 </head>
 <body>
