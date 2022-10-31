@@ -8,17 +8,17 @@
                     FUNCTIONS
     ---------------------------------------------*/
     function get_bookmark($url){
-        require "./vendor/autoload";
+        require "./vendor/autoload.php";
         $url=$_POST['url'];
         $web = new \spekulatius\phpscraper;
         $web->go($url);
         if($web->openGraph['og:title']){
-            $web->openGraph['og:title'];   
+            $name = $web->openGraph['og:title'];   
         }else{
             $name = $web->title;
         };
         if($web->openGraph['og:image']){
-            $img = $web->openGraph['og:img'];
+            $img = $web->openGraph['og:image'];
         }else{
             $img = $web->image;
         }
@@ -27,7 +27,7 @@
         }else{
             $desc = $web->description;
         };
-        return($name,$title ,$img);
+        return [$name,$desc,$img];
     }
 
 ?>

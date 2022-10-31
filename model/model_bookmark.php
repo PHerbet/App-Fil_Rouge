@@ -19,7 +19,7 @@
             $this->url_bookmark = $url_bookmark;
         }
         /*---------------------------------------------
-                    GETTER AND SETTER
+                        GETTERS
         ---------------------------------------------*/
         public function getIdBookmark():int
         {
@@ -33,38 +33,44 @@
         {
             return $this->url_bookmark;
         }
-        public function getDescriptionBookmark():string
+        public function getDescriptionBookmark()
         {
             return $this->description_bookmark;
         }
-        public function getImgBookmark():string
+        public function getImgBookmark()
         {
             return $this->img_bookmark;
         }
-        public function getIdUser():string
+        public function getIdUser()
         {
             return $this->id_user;
         }
-
-        public function setIdbookmark($id):void
+        /*---------------------------------------------
+                        SETTERS
+        ---------------------------------------------*/
+        public function setIdBookmark($id):void
         {
             $this->id_bookmark = $id;
         }
-        public function setNamebookmark($name_bookmark):void
+        public function setNameBookmark($name_bookmark):void
         {
             $this->name_bookmark = $name_bookmark;
         }
-        public function setUrlbookmark($url_bookmark):void
+        public function setUrlBookmark($url_bookmark):void
         {
             $this->url_bookmark = $url_bookmark;
         }
-        public function setDescriptionbookmark($description_bookmark):void
+        public function setDescriptionBookmark($description_bookmark)
         {
             $this->description_bookmark = $description_bookmark;
         }
-        public function setImgbookmark($img_bookmark):void
+        public function setImgBookmark($img_bookmark)
         {
             $this->image_bookmark = $img_bookmark;
+        }
+        public function setIdUser($id_user)
+        {
+            $this->id_user = $id_user;
         }
     }
 

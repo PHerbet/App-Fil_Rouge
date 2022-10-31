@@ -48,7 +48,7 @@
                         
                     echo "<script>setTimeout(()=>{
                         document.location.href='/projet/favoris'; 
-                        }, 1500);
+                        }, 100);
                     </script>";
                 }
                 else

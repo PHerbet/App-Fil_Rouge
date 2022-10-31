@@ -97,9 +97,12 @@
 			<!-- div menu ajouter des favoris -->
 			<div class="bookmark">
 				<!-- div ajouter l'url en favoris -->
-				<div>
-					<input type="button" name="" value="Ajouter Favoris">
-				</div>
+				<form action="" method="post">
+					<div>
+						<input type="text" id="url" name="url" placeholder="Enter url">
+						<button type="submit" name="submit">ajouter</button>
+					</div>
+				</form>
 				<!-- div du bouton menu -->
 				<div class="menu_icon">
 					<input type="image" class="icon" src="./asset/img/dropdown.webp">
@@ -112,7 +115,7 @@
 		<!-- div contenant les carte des favoris généré par une fonction -->
 		<div class="all_cards">
 			<!-- card contenant la description des favoris généré par js-->
-			<div class="card">
+			<!-- <div class="card">
 				<div class="image">
 					<img src="./asset/img/test1.png" alt="">
 				</div>
@@ -132,9 +135,9 @@
 						<input type="image" src="./asset/img/trash.png" class="icon">
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- card contenant la description des favoris généré par js-->
-			<div class="card">
+			<!-- <div class="card">
 				<div class="image">
 					<img src="./asset/img/test1.png" alt="">
 				</div>
@@ -154,9 +157,9 @@
 						<input type="image" src="./asset/img/trash.png" class="icon">
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- card contenant la description des favoris généré par js-->
-			<div class="card">
+			<!-- <div class="card">
 				<div class="image">
 					<img src="./asset/img/test1.png" alt="">
 				</div>
@@ -176,9 +179,9 @@
 						<input type="image" src="./asset/img/trash.png" class="icon">
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- card contenant la description des favoris généré par js-->
-			<div class="card">
+			<!-- <div class="card">
 				<div class="image">
 					<img src="./asset/img/test1.png" alt="">
 				</div>
@@ -198,7 +201,7 @@
 						<input type="image" src="./asset/img/trash.png" class="icon">
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<script src="./asset/script/menu.js"></script>
