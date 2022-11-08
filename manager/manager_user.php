@@ -5,7 +5,7 @@ class  ManagerUser extends User {
                     METHODS
     ---------------------------------------------*/
     //Account creation:
-    public function add_user($bdd):void
+    public function addUser($bdd):void
     {//object instance:
         $login = $this->getLoginUser();
         $pass = $this->getpassUser();
@@ -28,11 +28,11 @@ class  ManagerUser extends User {
         }
     }
     //Method to show an user by his mail
-    public function show_user_by_mail($bdd)
+    public function getUserByMail($bdd)
     {
         try
         {//SQL request
-            $req = $bdd->prepare('SELECT * FROM user WHERE mail_user = :mail_user');
+            $req = $bdd->prepare('SELECT login_user, img_user, id_user, pass_user FROM user WHERE mail_user = :mail_user');
             $req -> execute(array(
                 'mail_user' => $this->getMailUser(), 
             ));
