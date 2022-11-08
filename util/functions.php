@@ -7,7 +7,7 @@
     /*---------------------------------------------
                     FUNCTIONS
     ---------------------------------------------*/
-    function get_bookmark($url){
+    function getBookmark($url){
         require "./vendor/autoload.php";
         $url=$_POST['url'];
         $web = new \spekulatius\phpscraper;

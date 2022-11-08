@@ -5,7 +5,7 @@
                         METHODS
         ---------------------------------------------*/
         //bookmark creation
-        public function add_bookmark($bdd):void 
+        public function addBookmark($bdd):void 
         {//instanciation of a new object
             $name = $this->getNameBookmark();
             $url = $this->getUrlBookmark();

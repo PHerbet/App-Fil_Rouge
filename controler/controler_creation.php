@@ -24,18 +24,16 @@
             $user -> setImgUser($_POST['img']);
             {//Hash password
                 $option= 10;
-                echo $user->setPassUser(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
+                $user->setPassUser(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
 
             //Checking if mail are already in the db
                 $mail = $user->getUserByMail($bdd);
                 if ($mail)
                 {//Using method add_user to create an account
-                    // var_dump($mail);
                     echo' les informations sont incorrecte';
                 }
                 else
                 {//Error message for existing mail in database
-                    // var_dump($mail);
                     $user->addUser($bdd);
                     echo '<p> Inscription réussie!<p>';
                 }
