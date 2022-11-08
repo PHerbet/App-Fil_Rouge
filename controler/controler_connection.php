@@ -31,11 +31,11 @@
                 $password = password_verify($_POST['mdp'], $hash);
                 if($password)
                 {//Creating super globale SESSION
+                    session_start();
                     $_SESSION['connected'] = true;
                     $_SESSION['login'] = $test[0]['login_user'];
                     $_SESSION['img'] = $test[0]['img_user'];
                     $_SESSION['id'] = $test[0]['id_user'];
-                    var_dump($_SESSION);
                     //Connection message
                     echo 'Vous êtes connecté !';
                     //Redirection
