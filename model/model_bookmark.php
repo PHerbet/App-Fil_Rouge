@@ -66,7 +66,7 @@
         }
         public function setImgBookmark($img_bookmark)
         {
-            $this->image_bookmark = $img_bookmark;
+            $this->img_bookmark = $img_bookmark;
         }
         public function setIdUser($id_user)
         {

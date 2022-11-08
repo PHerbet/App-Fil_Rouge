@@ -34,14 +34,16 @@ var_dump($_SESSION);
             $bookmark -> setNameBookmark($name);
             $bookmark -> setDescriptionBookmark($desc);
             $bookmark -> setImgBookmark($img);
+            $bookmark -> setIdUser($_SESSION['id']);
+            var_dump($bookmark);
             $bookmark->add_bookmark($bdd);
             //Validation message: 
             echo "Favoris ajouté!";
             //Refresh the page 
-            echo "<script>setTimeout(()=>{
-                document.location.href='/projet/favoris'; 
-                }, 100);
-            </script>";
+            // echo "<script>setTimeout(()=>{
+            //     document.location.href='/projet/favoris'; 
+            //     }, 100);
+            // </script>";
         }
     }
 ?>
