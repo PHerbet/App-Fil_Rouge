@@ -21,27 +21,21 @@
         //instanciation of a new Object
             $user = new ManagerUser("", "", "", "");
             $user -> setMailUser($_POST['mail']);
-            // $user -> setImgUser($_POST['img']);
-            //Stockage the information in an array
+            //Stockage information in an array
+            $test = $user->getUserByMail($bdd);
             
-            $test = $user->show_user_by_mail($bdd);
-            
-            var_dump($user);//If the user exist in database, we check the password
             if(!empty($test))
             {//Getting the hash
                 $hash = $test[0]['pass_user'];
-                var_dump($hash);
                 //We check the correspondance between the password in the datatbase an in the form
                 $password = password_verify($_POST['mdp'], $hash);
-                var_dump($password);
                 if($password)
                 {//Creating super globale SESSION
+                    session_start();
                     $_SESSION['connected'] = true;
-                    $_SESSION['login'] = $test[0]['login'];
-                    $_SESSION['mail'] = $test[0]['mail'];
-                    $_SESSION['pass'] = $test[0]['pass'];
-                    $_SESSION['img'] = $test[0]['img'];
-                    $_SESSION['statut'] = $test[0]['statut'];
+                    $_SESSION['login'] = $test[0]['login_user'];
+                    $_SESSION['img'] = $test[0]['img_user'];
+                    $_SESSION['id'] = $test[0]['id_user'];
                     //Connection message
                     echo 'Vous êtes connecté !';
                     //Redirection

@@ -27,7 +27,7 @@
                 echo $user->setPassUser(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
 
             //Checking if mail are already in the db
-                $mail = $user->show_user_by_mail($bdd);
+                $mail = $user->getUserByMail($bdd);
                 if ($mail)
                 {//Using method add_user to create an account
                     // var_dump($mail);
@@ -36,7 +36,7 @@
                 else
                 {//Error message for existing mail in database
                     // var_dump($mail);
-                    $user->add_user($bdd);
+                    $user->addUser($bdd);
                     echo '<p> Inscription réussie!<p>';
                 }
             }
