@@ -4,8 +4,7 @@ session_start();
 /*----------------------------------------
                 IMPORT
 ----------------------------------------*/
-//Import view creation
-    include './view/view_bookmark.php';
+
 //Import model
     include './model/model_bookmark.php';
 //Import manager
@@ -44,4 +43,15 @@ session_start();
             </script>";
         }
     }
+    //We show all the bookmark of the account with the id
+    $bookmark = new ManagerBookmark(null, null, null, null);
+    $id = $_SESSION['id'];
+    $data = $bookmark->showAllBookmark($bdd, $id);
+
+/*----------------------------------------
+                IMPORT
+----------------------------------------*/
+//Import view creation at last for the data
+include './view/view_bookmark.php';
+
 ?>

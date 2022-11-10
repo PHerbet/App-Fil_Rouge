@@ -30,6 +30,22 @@
             }
         }
         //Method to show the bookmark
-        
+        public function showAllBookmark($bdd,$id)
+        {
+            try
+            {
+                $req = $bdd->prepare("SELECT url_bookmark, name_bookmark, description_bookmark, img_bookmark, id_user 
+                FROM bookmark WHERE id_user = :id_user ORDER BY name_bookmark ASC");
+                $req->execute(array(
+                    'id_user' => $id));
+                $data = $req->fetchAll(PDO::FETCH_OBJ);
+                return $data;
+            }
+            catch(Exception $e)
+            {
+                //affichage d'une exception en cas d’erreur
+                die('Erreur : '.$e->getMessage());
+            }
+        }
     }
 ?>

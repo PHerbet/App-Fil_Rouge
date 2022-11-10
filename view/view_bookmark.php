@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- Div contenant toute la page-->
-	<div class="corps">
+	<div id="app" class="corps">
 		<!-- div du menu user et des dossiers de favoris  -->
 		<div class="menu">
 			<!-- div bouton et menu user  -->
@@ -20,7 +20,7 @@
 				</div>
 				<!-- div avec le pseudo récupéré via une fonction -->
 				<div class="login">
-					<P>Username</P>
+					<P><?php echo $_SESSION['login'] ?></P>
 				</div>
 				<!-- div du bouton menu -->
 				<div class="menu_icon">
@@ -115,93 +115,29 @@
 		<!-- div contenant les carte des favoris généré par une fonction -->
 		<div class="all_cards">
 			<!-- card contenant la description des favoris généré par js-->
-			<!-- <div class="card">
+			<?php foreach($data as $bookmark): ?>
+			<div class="card">
 				<div class="image">
-					<img src="./asset/img/test1.png" alt="">
+					<img src="<?= $bookmark->img_bookmark ?>" alt="">
 				</div>
 				<div class="text">
 					<div class="title">
-						<h4>"Lorem Ipsum"</h4>
+						<h4><?= $bookmark->name_bookmark ?></h4>
 					</div>
 					<div class="description">
-						<p>Loremtium.</p>
+						<p><?= $bookmark->description_bookmark ?></p>
 					</div>
 				</div>
 				<div class="go_trash">
 					<div class="go">
-						<input type="image" src="./asset/img/go.svg" class="icon">
+						<a href ="<?= $bookmark->url_bookmark ?>"><img src="./asset/img/go.svg" class="icon" target="_blank"></a>
 					</div>
 					<div class="trash">
 						<input type="image" src="./asset/img/trash.png" class="icon">
 					</div>
 				</div>
-			</div> -->
-			<!-- card contenant la description des favoris généré par js-->
-			<!-- <div class="card">
-				<div class="image">
-					<img src="./asset/img/test1.png" alt="">
-				</div>
-				<div class="text">
-					<div class="title">
-						<h4>"Lorem Ipsum"</h4>
-					</div>
-					<div class="description">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia debitis magni dolore fugit ipsam assumenda ex cum quod placeat sed illo architecto libero pariatur ullam tempore deleniti, vitae, porro laudantium.</p>
-					</div>
-				</div>
-				<div class="go_trash">
-					<div class="go">
-						<input type="image" src="./asset/img/go.svg" class="icon">
-					</div>
-					<div class="trash">
-						<input type="image" src="./asset/img/trash.png" class="icon">
-					</div>
-				</div>
-			</div> -->
-			<!-- card contenant la description des favoris généré par js-->
-			<!-- <div class="card">
-				<div class="image">
-					<img src="./asset/img/test1.png" alt="">
-				</div>
-				<div class="text">
-					<div class="title">
-						<h4>"Lorem Ipsum"</h4>
-					</div>
-					<div class="description">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia debitis magni dolore fugit ipsam assumenda ex cum quod placeat sed illo architecto libero pariatur ullam tempore deleniti, vitae, porro laudantium.</p>
-					</div>
-				</div>
-				<div class="go_trash">
-					<div class="go">
-						<input type="image" src="./asset/img/go.svg" class="icon">
-					</div>
-					<div class="trash">
-						<input type="image" src="./asset/img/trash.png" class="icon">
-					</div>
-				</div>
-			</div> -->
-			<!-- card contenant la description des favoris généré par js-->
-			<!-- <div class="card">
-				<div class="image">
-					<img src="./asset/img/test1.png" alt="">
-				</div>
-				<div class="text">
-					<div class="title">
-						<h4>"Lorem Ipsum"</h4>
-					</div>
-					<div class="description">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia debitis magni dolore fugit ipsam assumenda ex cum quod placeat sed illo architecto libero pariatur ullam tempore deleniti, vitae, porro laudantium.</p>
-					</div>
-				</div>
-				<div class="go_trash">
-					<div class="go">
-						<input type="image" src="./asset/img/go.svg" class="icon">
-					</div>
-					<div class="trash">
-						<input type="image" src="./asset/img/trash.png" class="icon">
-					</div>
-				</div>
-			</div> -->
+			</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<script src="./asset/script/menu.js"></script>
