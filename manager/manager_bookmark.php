@@ -26,7 +26,11 @@
             }//Catching and return exception:
             catch(Exception $e)
             {
-                die('Erreur : '.$e->getMessage());
+                echo "<script>setTimeout(()=>{
+                    document.location.href='/projet/favoris'; 
+                    }, 100);
+                </script>";
+                // die('Erreur : '.$e->getMessage());
             }
         }
         //Method to show the bookmark

@@ -20,7 +20,8 @@ session_start();
 
         if(isset($_POST['url']) && $_POST['url'] !='')
         {
-            $url = $_POST['url'];
+            $url = cleanseCode($_POST['url']);
+
             //Get bookmark informations 
             $info = getBookmark($url);
             $name = $info[0];
@@ -29,14 +30,14 @@ session_start();
 
             $bookmark = new ManagerBookmark(null, null, null, null);
             $bookmark -> setUrlBookmark($url);
-            $bookmark -> setNameBookmark($name);
-            $bookmark -> setDescriptionBookmark($desc);
-            $bookmark -> setImgBookmark($img);
+            $bookmark -> setNameBookmark(cleanseCode($name));
+            $bookmark -> setDescriptionBookmark(cleanseCode($desc));
+            $bookmark -> setImgBookmark(cleanseCode($img));
             $bookmark -> setIdUser($_SESSION['id']);
             $bookmark->addBookmark($bdd);
-            //Validation message: 
-            echo "Favoris ajouté!";
-            //Refresh the page 
+            //Validation message (need to be update): 
+            echo "favoris enregistré";
+            // Refresh the page 
             echo "<script>setTimeout(()=>{
                 document.location.href='/projet/favoris'; 
                 }, 100);
