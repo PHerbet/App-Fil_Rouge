@@ -99,7 +99,7 @@
 				<!-- div ajouter l'url en favoris -->
 				<form action="" method="post">
 					<div>
-						<input type="text" id="url" name="url" placeholder="Enter url">
+						<input type="url" id="url" name="url" placeholder="Enter url">
 						<button type="submit" name="submit">ajouter</button>
 					</div>
 				</form>
