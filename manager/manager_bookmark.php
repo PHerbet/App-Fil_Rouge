@@ -23,7 +23,7 @@
                     'img_bookmark' => $img,
                     'id_user' => $id_user,
                 ));
-            }//Catching and return exception:
+            }//Catching exception and redirect:
             catch(Exception $e)
             {
                 echo "<script>setTimeout(()=>{
@@ -31,6 +31,24 @@
                     }, 100);
                 </script>";
                 // die('Erreur : '.$e->getMessage());
+            }
+        }
+        //Method to check if bookmark exist in BDD
+        public function checkBookmark($bdd, $id, $url) {
+            try
+            {//SQL request
+                $req = $bdd->prepare('SELECT url_bookmark, id_user 
+                FROM bookmark WHERE id_user = :id_user AND url_bookmark = :url_bookmark');
+                $req -> execute(array(
+                    'id_user' => $id,
+                    'url_bookmark' => $url,
+                ));
+                $data = $req -> fetchAll(PDO::FETCH_ASSOC);
+                return $data;
+            }//Catching and return exception:
+            catch(Exception $e)
+            {
+                die('Erreur : '.$e->getMessage());
             }
         }
         //Method to show the bookmark
