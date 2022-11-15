@@ -95,7 +95,7 @@
 				</form>			
 			</div>
 			<!-- div menu ajouter des favoris -->
-			<div class="bookmark">
+			<div class="hide_bookmark">
 				<!-- div ajouter l'url en favoris -->
 				<form action="" method="post">
 					<div>
@@ -104,12 +104,12 @@
 					</div>
 				</form>
 				<!-- div du bouton menu -->
-				<div class="menu_icon">
+				<!-- <div class="menu_icon">
 					<input type="image" class="icon" src="./asset/img/dropdown.webp">
 				</div>
 				<div class="add_bookmark">
 					<input type="file" hidden>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<!-- div contenant les carte des favoris généré par une fonction -->

@@ -33,15 +33,15 @@
         {
             return $this->url_bookmark;
         }
-        public function getDescriptionBookmark()
+        public function getDescriptionBookmark():string
         {
             return $this->description_bookmark;
         }
-        public function getImgBookmark()
+        public function getImgBookmark():string
         {
             return $this->img_bookmark;
         }
-        public function getIdUser()
+        public function getIdUser():int
         {
             return $this->id_user;
         }
@@ -60,15 +60,15 @@
         {
             $this->url_bookmark = $url_bookmark;
         }
-        public function setDescriptionBookmark($description_bookmark)
+        public function setDescriptionBookmark($description_bookmark):void
         {
             $this->description_bookmark = $description_bookmark;
         }
-        public function setImgBookmark($img_bookmark)
+        public function setImgBookmark($img_bookmark):void
         {
             $this->img_bookmark = $img_bookmark;
         }
-        public function setIdUser($id_user)
+        public function setIdUser($id_user):void
         {
             $this->id_user = $id_user;
         }

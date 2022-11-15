@@ -9,7 +9,7 @@
         private $pass_user;
         private $mail_user;
         private $img_user;
-        private $statut_user;
+
         /*---------------------------------------------
                         CONSTRUCTOR
         ---------------------------------------------*/
@@ -42,10 +42,6 @@
         {
             return $this->img_user;
         }
-        public function getStatutUser():bool 
-        {
-            return $this->statut_user;
-        }
 
         public function setIdUser($id):void
         {
@@ -66,10 +62,6 @@
         public function setImgUser($img):void
         {
             $this->img_user = $img;
-        }
-        public function setStatutUser($statut):void 
-        {
-            $this->statut_user = $statut;
         }
     }
 ?>

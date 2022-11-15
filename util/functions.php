@@ -32,12 +32,7 @@
             return [$name,$desc,$img];
         }
         catch (Exception $e){
-            // echo "<script>alert('Mauvais Url')</script>";
-            // echo "<script>setTimeout(()=>{
-            //     document.location.href='/projet/favoris'; 
-            //     }, 100);
-            // </script>";
-
+            // ('Erreur : '.$e->getMessage());
         }
     }
 
