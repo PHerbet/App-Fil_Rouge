@@ -5,9 +5,6 @@ $id = $_SESSION['id'];
 /*----------------------------------------
                 IMPORT
 ----------------------------------------*/
-
-//Import model
-    include './model/model_bookmark.php';
 //Import manager
     include './manager/manager_bookmark.php';
 
@@ -26,15 +23,11 @@ $id = $_SESSION['id'];
             if($info == null){
                 //Error message (need to be updated)
                 echo "<script>alert('Mauvais Url')</script>";
-                echo "<script>setTimeout(()=>{
-                    document.location.href='/projet/favoris'; 
-                }, 100);
-                </script>";
             }
             else{//cleanning variable
                 $name = cleanseCode($info[0]);
                 $desc = cleanseCode($info[1]);
-                $img = cleanseCode($info[2]);
+                $img  = cleanseCode($info[2]);
                 $cleanUrl = cleanseCode($url);
                 //instanciation of new object
                 $bookmark = new ManagerBookmark(null, null, null, null);
@@ -61,10 +54,10 @@ $id = $_SESSION['id'];
                         //Error message (need to be update): 
                         echo "<script>alert('Problème d'enregistrement')</script>";
                         // Refresh the page 
-                        echo "<script>setTimeout(()=>{
-                            document.location.href='/projet/favoris'; 
-                            }, 100);
-                        </script>";
+                        // echo "<script>setTimeout(()=>{
+                        //     document.location.href='/projet/favoris'; 
+                        //     }, 100);
+                        // </script>";
                     }
                 }
                 else
@@ -77,6 +70,11 @@ $id = $_SESSION['id'];
                 </script>";
                 }
             }
+        }
+        else 
+        {
+            //Error message (need to be updated)
+            echo "<script>alert('Aucune URL')</script>";
         }
     }
     //We show all the bookmark of the account with the id

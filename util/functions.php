@@ -10,7 +10,6 @@
     //function for getting bookmark information with the URL
     function getBookmark($url){
             require "./vendor/autoload.php";
-
             try{
             $web = new \spekulatius\phpscraper;
             $web->go($url);

@@ -13,9 +13,8 @@
         /*---------------------------------------------
                         CONSTRUCTOR
         ---------------------------------------------*/
-        public function __construct($name_bookmark, $url_bookmark)
+        public function __construct($url_bookmark)
         {
-            $this->name_bookmark = $name_bookmark;
             $this->url_bookmark = $url_bookmark;
         }
         /*---------------------------------------------
