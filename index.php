@@ -21,19 +21,19 @@
     switch($path){
     //route /routing/test -> ./test.php
     case $path === "/projet/":
-    include "./controler/controler_connection.php";
+    include "./controller/controller_connection.php";
     break;
 
     case $path === "/projet/inscription":
-        include "./controler/controler_creation.php";
+        include "./controller/controller_creation.php";
         break;
 
     case $path === "/projet/favoris":
-        include "./controler/controler_bookmark.php"; 
+        include "./controller/controller_bookmark.php"; 
         break;
 
             case $path === "/projet/deconnection":
-        include "./controler/controler_deconnection.php"; 
+        include "./controller/controller_deconnection.php"; 
         break;
     }
 ?>
