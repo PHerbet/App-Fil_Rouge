@@ -39,49 +39,66 @@
 				</div>
 			</div>
 			<!-- div afficher tout les favoris et bouton création de dossier -->
-			<div class="all_bookmark">
-				<!-- div du lien pour afficher tous les favoris -->
-				<div class="title">
-					<a href="">Favoris</a>
+			<div class="max_screen">
+				<div class="all_bookmark">
+					<!-- div du lien pour afficher tous les favoris -->
+					<div class="title">
+						<a href="">Favoris</a>
+					</div>
+					<!-- div bouton ajout dossier -->
+					<div class="add_icon">
+					<input type="image" class="icon" id="ad_folder" src="./asset/img/add_folder.webp">
+					</div>
+					<div class="add_folder" >
+						<form>
+							<input type="text" name="" placeholder="Nouveau Dossier" id="">
+						</form>
+					</div>
 				</div>
-				<!-- div bouton ajout dossier -->
-				<div class="add_icon">
-				<input type="image" class="icon" id="ad_folder" src="./asset/img/add_folder.webp">
-				</div>
-				<div class="add_folder">
-					<form>
-						<input type="text" name="" placeholder="Nouveau Dossier" id="">
-					</form>
+				<!-- div contenant tout les dossiers de favoris généré par la fonction  -->
+				<div class="all_folders">
+					<!-- div d'un dossier de favoris généré par une fonction -->
+					<div class="folder">
+						<div class="folder_icon">
+							<img class="icon" src="./asset/img/logo.png">
+						</div>
+						<div class="folder_name">
+							Cybersécurité
+						</div>
+					</div>
+					<!-- div d'un dossier de favoris généré par une fonction -->
+					<div class="folder">
+						<div class="folder_icon">
+							<img class="icon" src="./asset/img/logo.png">
+						</div>
+						<div class="folder_name">
+							CSS/HTML
+						</div>
+					</div>
+					<!-- div d'un dossier de favoris généré par une fonction -->
+					<div class="folder">
+						<div class="folder_icon">
+							<img class="icon" src="./asset/img/logo.png">
+						</div>
+						<div class="folder_name">
+							Licornes 
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- div contenant tout les dossiers de favoris généré par la fonction  -->
-			<div class="all_folders">
-				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="folder">
-					<div class="folder_icon">
-						<img class="icon" src="./asset/img/logo.png">
-					</div>
-					<div class="folder_name">
-						Cybersécurité
-					</div>
-				</div>
-				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="folder">
-					<div class="folder_icon">
-						<img class="icon" src="./asset/img/logo.png">
-					</div>
-					<div class="folder_name">
-						CSS/HTML
-					</div>
-				</div>
-				<!-- div d'un dossier de favoris généré par une fonction -->
-				<div class="folder">
-					<div class="folder_icon">
-						<img class="icon" src="./asset/img/logo.png">
-					</div>
-					<div class="folder_name">
-						Licornes 
-					</div>
+			<div class="small_screen">
+				<div class="bookmark_cat">
+					<nav>
+						<ul>
+							<li><a href="#">Favoris</a>
+								<ul class="select">
+									<li><a href="#">Cybersécurité</a></li>
+									<li><a href="#">HTML/CSS</a></li>
+									<li><a href="#">Licorne</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -95,7 +112,7 @@
 				</form>			
 			</div>
 			<!-- div menu ajouter des favoris -->
-			<div class="bookmark">
+			<div class="hide_bookmark">
 				<!-- div ajouter l'url en favoris -->
 				<form action="" method="post">
 					<div>
@@ -104,21 +121,21 @@
 					</div>
 				</form>
 				<!-- div du bouton menu -->
-				<div class="menu_icon">
+				<!-- <div class="menu_icon">
 					<input type="image" class="icon" src="./asset/img/dropdown.webp">
 				</div>
 				<div class="add_bookmark">
 					<input type="file" hidden>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<!-- div contenant les carte des favoris généré par une fonction -->
 		<div class="all_cards">
-			<!-- card contenant la description des favoris généré par js-->
+			<!-- card contenant la description des favoris généré par php-->
 			<?php foreach($data as $bookmark): ?>
 			<div class="card">
 				<div class="image">
-					<img src="<?= $bookmark->img_bookmark ?>" alt="">
+					<img src="<?= $bookmark->img_bookmark ?>" width="150px" height="150px" alt="">
 				</div>
 				<div class="text">
 					<div class="title">
@@ -130,10 +147,10 @@
 				</div>
 				<div class="go_trash">
 					<div class="go">
-						<a href ="<?= $bookmark->url_bookmark ?>"><img src="./asset/img/go.svg" class="icon" target="_blank"></a>
+						<a href ="<?= $bookmark->url_bookmark ?>"><img src="./asset/img/go.svg" width="15px" height="15px" class="icon"></a>
 					</div>
 					<div class="trash">
-						<input type="image" src="./asset/img/trash.png" class="icon">
+						<input type="image" src="./asset/img/trash.png" width="15px" height="15px" class="icon">
 					</div>
 				</div>
 			</div>

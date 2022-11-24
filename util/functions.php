@@ -10,7 +10,6 @@
     //function for getting bookmark information with the URL
     function getBookmark($url){
             require "./vendor/autoload.php";
-
             try{
             $web = new \spekulatius\phpscraper;
             $web->go($url);
@@ -32,12 +31,7 @@
             return [$name,$desc,$img];
         }
         catch (Exception $e){
-            // echo "<script>alert('Mauvais Url')</script>";
-            // echo "<script>setTimeout(()=>{
-            //     document.location.href='/projet/favoris'; 
-            //     }, 100);
-            // </script>";
-
+            // ('Erreur : '.$e->getMessage());
         }
     }
 

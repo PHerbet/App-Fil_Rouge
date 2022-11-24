@@ -1,4 +1,8 @@
 <?php
+        /*---------------------------------------------
+                        IMPORT
+        ---------------------------------------------*/
+    include './model/model_bookmark.php';
 
     class ManagerBookmark extends Bookmark {
         /*---------------------------------------------
@@ -26,15 +30,12 @@
             }//Catching exception and redirect:
             catch(Exception $e)
             {
-                echo "<script>setTimeout(()=>{
-                    document.location.href='/projet/favoris'; 
-                    }, 100);
-                </script>";
                 // die('Erreur : '.$e->getMessage());
             }
         }
         //Method to check if bookmark exist in BDD
-        public function checkBookmark($bdd, $id, $url) {
+        public function checkBookmark($bdd, $id, $url) 
+        {
             try
             {//SQL request
                 $req = $bdd->prepare('SELECT url_bookmark, id_user 
@@ -43,12 +44,12 @@
                     'id_user' => $id,
                     'url_bookmark' => $url,
                 ));
-                $data = $req -> fetchAll(PDO::FETCH_ASSOC);
+                $data = $req -> fetchAll(PDO::FETCH_OBJ);
                 return $data;
             }//Catching and return exception:
             catch(Exception $e)
             {
-                die('Erreur : '.$e->getMessage());
+                // die('Erreur : '.$e->getMessage());
             }
         }
         //Method to show the bookmark

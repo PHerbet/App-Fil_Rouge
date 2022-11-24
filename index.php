@@ -27,7 +27,7 @@
     case $path === "/projet/inscription":
         include "./controller/controller_creation.php";
         break;
-
+        //need to be update with a middleware or ether for enhance security
     case $path === "/projet/favoris":
         include "./controller/controller_bookmark.php"; 
         break;
