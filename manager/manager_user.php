@@ -1,4 +1,6 @@
 <?php
+//Import model
+include './model/model_user.php';
 
 class  ManagerUser extends User {
     /*---------------------------------------------

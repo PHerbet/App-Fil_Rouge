@@ -5,8 +5,6 @@
 ----------------------------------------*/
 //Import view connexion
     include './view/view_connection.php';
-//Import model
-    include './model/model_user.php';
 //Import manager
     include './manager/manager_user.php';
 /*----------------------------------------
@@ -15,7 +13,7 @@
 //We check if the button was pressed
     if (isset($_POST['connexion']))
     {//We check if fields are not empty
-        if (isset($_POST['mail']) && isset($_POST['mdp'])
+        if (isset($_POST['mail']) && isset($_POST['mdp']) 
         && $_POST['mail'] !="" && $_POST['mdp'] !="")
         {
         //instanciation of a new Object

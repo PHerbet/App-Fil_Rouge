@@ -4,8 +4,6 @@
     ----------------------------------------*/
     //Import view creation
         include './view/view_creation.php';
-    //Import model
-        include './model/model_user.php';
     //Import manager
         include './manager/manager_user.php';
     /*----------------------------------------
@@ -15,13 +13,13 @@
     if (isset($_POST['inscription']))
     {//We check the conditions
         if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['mdp'])
-        && $_POST['login'] !="" && $_POST['mail'] !="" && $_POST['mdp'] !="")
+        && $_POST['login'] !="" && $_POST['mail'] !="" && $_POST['mdp'] !="" && $_POST['mdp']==$_POST['mdp2'])
         {
             //instanciation of a new Object
             $user = new ManagerUser(null, null, null, null);
-            $user -> setLoginUser($_POST['login']);
-            $user -> setMailUser($_POST['mail']);
-            $user -> setImgUser($_POST['img']);
+            $user -> setLoginUser(cleanseCode($_POST['login']));
+            $user -> setMailUser(cleanseCode($_POST['mail']));
+            $user -> setImgUser(cleanseCode($_POST['img']));
             {//Hash password
                 $option= 10;
                 $user->setPassUser(password_hash($_POST['mdp'],PASSWORD_BCRYPT),$option);
